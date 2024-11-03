@@ -36,6 +36,7 @@ sumber : [https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html, ht
 ### 😸 Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
 <details>
 <summary></summary>
+
 1. MaterialApp
     MaterialApp adalah widget yang membungkus aplikasi dan menyediakan banyak konfigurasi seperti tema aplikasi, home widget, dan title aplikasi. Widget ini juga menyediakan tampilan Material Design untuk aplikasi.
 2. ThemeData
@@ -67,6 +68,7 @@ sumber : [https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html, ht
 ### 😸 Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
 <details>
 <summary></summary>
+
 setState() dalam Flutter adalah sebuah metode yang digunakan di dalam objek State dari sebuah StatefulWidget untuk memberi tahu framework Flutter bahwa tampilan widget harus diperbarui. Saat Anda memanggil setState(), Flutter menandai status widget sebagai "kotor" atau "dirty", yang berarti UI perlu diperbarui pada frame berikutnya. Perubahan yang dilakukan pada variabel status (variabel di dalam objek State) hanya akan tercermin di UI setelah setState() dipanggil. Semua variabel yang berada di dalam objek State dari sebuah StatefulWidget dapat terpengaruh oleh setState(). Terutama, variabel-variabel yang menyimpan informasi penting untuk UI, seperti:
 - Counter atau variabel numerik lainnya (misalnya untuk menghitung jumlah klik)
 - Boolean (untuk mengubah status on/off, tampilan, atau status terpilih/tidak terpilih)
@@ -78,6 +80,7 @@ sumber : [https://dev.to/nicks101/when-to-use-setstate-in-flutter-380]
 ### 😸 Jelaskan perbedaan antara const dengan final.
 <details>
 <summary></summary>
+
 Secara garis besar, perbedaan antara variabel const dan final terletak pada : 
 1. Waktu Penetapan Nilai
     final: Nilai final ditetapkan hanya sekali dan bisa diberikan nilai saat runtime. Ini berarti bahwa nilai final dapat ditentukan berdasarkan perhitungan atau hasil yang hanya tersedia saat program berjalan, seperti hasil dari operasi atau fungsi.
@@ -98,6 +101,7 @@ sumber : [https://stackoverflow.com/questions/50431055/what-is-the-difference-be
 ### 😸 Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
 <details>
 <summary></summary>
+
 Saya memulai pembuatan proyek Flutter baru bernama `petshop_mobile` dengan perintah `flutter create petshop_mobile` dan kemudian masuk ke dalam direktori proyek yang baru terbentuk. Secara otomatis, struktur proyek dasar terbentuk, termasuk file `main.dart` yang berfungsi sebagai entry point. Langkah selanjutnya adalah membuat file baru bernama `menu.dart` untuk memisahkan tampilan utama aplikasi sehingga `main.dart` bisa tetap ringkas dan berfungsi hanya sebagai entry point. Karena aplikasi ini memerlukan interaksi dinamis, saya mengubah `StatelessWidget` menjadi `StatefulWidget`, yang memungkinkan penggunaan fungsi `setState()` untuk memperbarui UI secara real-time saat tombol ditekan. Untuk menjaga kerapian struktur, saya memindahkan kode utama dari `main.dart` (mulai dari baris ke-39 hingga akhir) ke dalam `menu.dart`, sehingga bagian tampilan aplikasi berada dalam file terpisah.
 
 Di `menu.dart`, saya membuat kelas bernama `ItemHomepage` dengan atribut `name`, `icon`, dan `color`. Atribut-atribut ini memungkinkan saya untuk mengatur nama, ikon, dan warna setiap tombol yang akan ditampilkan di halaman utama. Selanjutnya, saya membuat object ItemHomepage pada MyHomepage(). Setiap tombol diatur agar memiliki ikon, warna, dan teks yang berbeda, sesuai data yang diberikan. Untuk menambah interaksi, pada setiap tombol, saya menambahkan `SnackBar` yang akan muncul saat tombol ditekan dan menampilkan pesan, seperti “Kamu telah menekan tombol {nama}!”. Saya menggunakan `ScaffoldMessenger` untuk memunculkan `SnackBar` ini. Kode ini mengatur tampilan tombol sebagai berikut:
