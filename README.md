@@ -5,7 +5,7 @@
 <details>
 <summary></summary>
 
-### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
+### 😸 Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
 
 <details>
 <summary></summary>
@@ -29,9 +29,11 @@ Perbedaan utama pada statefull dan stateless widget terletak pada :
    - Stateless widget memiliki siklus hidup yang lebih sederhana karena tidak memiliki state yang harus dikelola.
    - Stateful widget memiliki siklus hidup yang lebih kompleks karena mengelola state yang dapat berubah, serta memungkinkan penggunaan `GlobalKey` untuk mempertahankan `State` dalam situasi tertentu.
 
+sumber : [https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html, https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html]
+
 </details>
 
-### Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
+### 😸 Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
 <details>
 <summary></summary>
 1. MaterialApp
@@ -62,17 +64,18 @@ Perbedaan utama pada statefull dan stateless widget terletak pada :
     MediaQuery menyediakan informasi tentang ukuran dan orientasi layar perangkat. Di InfoCard, MediaQuery digunakan untuk menentukan lebar kartu berdasarkan lebar layar perangkat.
 </details>
 
-### Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
+### 😸 Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
 <details>
 <summary></summary>
 setState() dalam Flutter adalah sebuah metode yang digunakan di dalam objek State dari sebuah StatefulWidget untuk memberi tahu framework Flutter bahwa tampilan widget harus diperbarui. Saat Anda memanggil setState(), Flutter menandai status widget sebagai "kotor" atau "dirty", yang berarti UI perlu diperbarui pada frame berikutnya. Perubahan yang dilakukan pada variabel status (variabel di dalam objek State) hanya akan tercermin di UI setelah setState() dipanggil. Semua variabel yang berada di dalam objek State dari sebuah StatefulWidget dapat terpengaruh oleh setState(). Terutama, variabel-variabel yang menyimpan informasi penting untuk UI, seperti:
 - Counter atau variabel numerik lainnya (misalnya untuk menghitung jumlah klik)
 - Boolean (untuk mengubah status on/off, tampilan, atau status terpilih/tidak terpilih)
 - String (untuk memperbarui teks yang ditampilkan di UI)
-- List dan Map (untuk memperbarui daftar item yang ditampilkan di UI)
+- List dan Map (untuk memperbarui daftar item yang ditampilkan di User Interface)
+sumber : [https://dev.to/nicks101/when-to-use-setstate-in-flutter-380]
 </details>
 
-### Jelaskan perbedaan antara const dengan final.
+### 😸 Jelaskan perbedaan antara const dengan final.
 <details>
 <summary></summary>
 Secara garis besar, perbedaan antara variabel const dan final terletak pada : 
@@ -88,9 +91,11 @@ Secara garis besar, perbedaan antara variabel const dan final terletak pada :
 4. Canonization atau Penggabungan Objek Const
     const: Objek const di-Dart adalah canonicalized, artinya jika Anda membuat objek const dengan nilai yang sama, Dart akan menggunakan satu objek yang sama untuk menghemat memori.
     final: Objek final tidak bersifat canonicalized. Jika dua variabel final memiliki nilai yang sama, Dart tetap akan membuat dua objek terpisah.
+
+sumber : [https://stackoverflow.com/questions/50431055/what-is-the-difference-between-the-const-and-final-keywords-in-dart]
 </details>
 
-###  Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
+### 😸 Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
 <details>
 <summary></summary>
 Saya memulai pembuatan proyek Flutter baru bernama `petshop_mobile` dengan perintah `flutter create petshop_mobile` dan kemudian masuk ke dalam direktori proyek yang baru terbentuk. Secara otomatis, struktur proyek dasar terbentuk, termasuk file `main.dart` yang berfungsi sebagai entry point. Langkah selanjutnya adalah membuat file baru bernama `menu.dart` untuk memisahkan tampilan utama aplikasi sehingga `main.dart` bisa tetap ringkas dan berfungsi hanya sebagai entry point. Karena aplikasi ini memerlukan interaksi dinamis, saya mengubah `StatelessWidget` menjadi `StatefulWidget`, yang memungkinkan penggunaan fungsi `setState()` untuk memperbarui UI secara real-time saat tombol ditekan. Untuk menjaga kerapian struktur, saya memindahkan kode utama dari `main.dart` (mulai dari baris ke-39 hingga akhir) ke dalam `menu.dart`, sehingga bagian tampilan aplikasi berada dalam file terpisah.
