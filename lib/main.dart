@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petshop_mobile/menu.dart';
+import 'package:petshop_mobile/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.amber).copyWith(secondary: Colors.amber[50]),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(secondary: Colors.blue[900]),
         useMaterial3: true,
       ),
       home: MyHomePage(),

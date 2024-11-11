@@ -1,41 +1,5 @@
 import 'package:flutter/material.dart';
-
-class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key});
-
-  final List<ItemHomepage> items = [
-    ItemHomepage("Lihat Daftar Produk", Colors.blue[200]!, Icons.list),
-    ItemHomepage("Tambah Produk", Colors.purple[200]!, Icons.add),
-    ItemHomepage("Logout", Colors.red[400]!, Icons.logout),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Raisa Pet Shop',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.blue[900],
-      ),
-      body: GridView.count(
-        primary: true,
-        padding: const EdgeInsets.all(20),
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        crossAxisCount: 3,
-        shrinkWrap: true,
-        children: items.map((ItemHomepage item) {
-          return ItemCard(item);
-        }).toList(),
-      ),
-    );
-  }
-}
+import 'package:petshop_mobile/screens/productentry_form.dart';
 
 class ItemHomepage {
   final String name;
@@ -62,6 +26,14 @@ class ItemCard extends StatelessWidget {
             ..showSnackBar(
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!")),
             );
+            if (item.name == "Tambah Produk") {
+              Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductEntryFormPage(),
+                    ));
+    // TODO: Gunakan Navigator.push untuk melakukan navigasi ke MaterialPageRoute yang mencakup MoodEntryFormPage.
+  }
         },
         child: Container(
           padding: const EdgeInsets.all(8),
