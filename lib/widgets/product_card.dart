@@ -30,7 +30,7 @@ class ItemCard extends StatelessWidget {
               Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProductEntryFormPage(),
+                      builder: (context) => const ProductEntryFormPage(),
                     ));
     // TODO: Gunakan Navigator.push untuk melakukan navigasi ke MaterialPageRoute yang mencakup MoodEntryFormPage.
   }

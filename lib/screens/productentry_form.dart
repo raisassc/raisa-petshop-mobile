@@ -263,7 +263,7 @@ class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.blue[900]),
+                      backgroundColor: WidgetStateProperty.all(Colors.blue[900]),
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
