@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petshop_mobile/screens/list_productentry.dart';
 import 'package:petshop_mobile/screens/menu.dart';
 import 'package:petshop_mobile/screens/productentry_form.dart';
 
@@ -63,6 +64,17 @@ class LeftDrawer extends StatelessWidget {
                     ));
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.list_alt_rounded),
+              title: const Text('Daftar Product'),
+              onTap: () {
+                  // Route menu ke halaman mood
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ProductEntryPage()),
+                  );
+              },
+          ),
         ],
       ),
     );
